@@ -492,10 +492,10 @@ library(RJDBC)
 library(RODBC)
 
 odbcDataSources() # lists available odbc data sources
-con1 <- odbcConnect(dsn = 'PTTRN', uid = 'mqtcrt', pwd = 'just4now')
+con1 <- odbcConnect(dsn = 'xxx', uid = 'yyy', pwd = 'pass')
 sqlTypeInfo(con1) # lists available datatypes
-sqlTables(con1, schema = 'TIMETRAC', tableType = 'TABLE') # lists all tables in schema timetrac
-sqlColumns(con1, 'TIMETRAC.ASSIGNMENT') # info about columns of a table
+sqlTables(con1, schema = 'TTT', tableType = 'TABLE') # lists all tables in schema timetrac
+sqlColumns(con1, 'TTT.ASSIGNMENT') # info about columns of a table
 db_test <- sqlFetch(con1, 'SPSS.HANDSHAKE_INPUT') # read table to data frame
 query_test <- sqlQuery(con1, 'SELECT * FROM SPSS.HANDSHAKE_INPUT WHERE ID_GEO = 1') # sql query
 odbcCloseAll() # close all odbc connections
